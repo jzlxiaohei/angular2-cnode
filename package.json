@@ -1,0 +1,38 @@
+{
+  "name": "angular2-cnode",
+  "version": "0.0.1",
+  "description": "angular2 for cnodejs.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node-dev index.js"
+  },
+  "keywords": [
+    "angular2",
+    "cnode"
+  ],
+  "author": "zilong",
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.52",
+    "core-js": "^1.2.6",
+    "h2o2": "^4.0.2",
+    "hapi": "^11.1.2",
+    "inert": "^3.2.0"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^0.15.9",
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.5",
+    "gulp": "^3.9.0",
+    "html-loader": "^0.4.0",
+    "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "typescript": "^1.7.3",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  }
+}

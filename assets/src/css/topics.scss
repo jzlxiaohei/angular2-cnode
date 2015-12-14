@@ -1,0 +1,58 @@
+@import "reset.css";
+@import "atomic";
+@import "common";
+
+.topics{
+  background: #f0f0f0;
+}
+
+.topic-item{
+  display: flex;
+  padding: 10px;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  .avatar{
+    width:60px;
+    height: 60px;
+    border-radius: 80%;
+    overflow: hidden;
+    margin-right:10px;
+    img{
+      width: 100%;
+    }
+  }
+  .content{
+    position: relative;
+    padding: 5px 0;
+    flex:1;
+    .title{
+      font-size: 16px;
+      line-height: 22px;
+    }
+    .extra-info{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color:#999;
+      font-size: 12px;
+      .r-count{
+        color:#ff9500;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.hot-tag{
+  width:32px;
+  height: 16px;
+  background: #ff321E;
+  color:#fff;
+  position: relative;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: 1px;
+}
