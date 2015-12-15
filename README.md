@@ -9,3 +9,7 @@ just for study now!
     gulp dll
     
     gulp dev-server
+    
+    node index.js (node version >= 4)
+    
+open http://localhost:3123/assets/src/index.html
