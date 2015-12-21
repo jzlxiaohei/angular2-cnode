@@ -1,18 +1,21 @@
 import 'reflect-metadata'
 import 'zone.js'
 
-import {bootstrap,Component,CORE_DIRECTIVES} from 'angular2/angular2'
+import {bootstrap,Component,CORE_DIRECTIVES,Input} from 'angular2/angular2'
 
 import {Http,HTTP_PROVIDERS} from 'angular2/http'
-import {Router, RouterLink } from 'angular2/router';
+import {RouteData,Router, RouterLink ,OnActivate,OnDeactivate,ComponentInstruction} from 'angular2/router';
 import TopicService from "./services/TopicService";
+declare var TweenMax: any;
+
 
 @Component({
     selector:'list',
     directives:[RouterLink],
-    template: `<ul class="topics">
-        <a style="display: block;" [routerLink]="['Detail']">
-            <li class="topic-item" *ngFor="#topic of topics">
+    template: `<ul class="topics" id="topic-list">
+            <li  *ngFor="#topic of topics">
+                <a class="topic-item" [routerLink]="['detail']">
+
                     <div class="avatar">
                        <img src="{{topic.author.avatar_url}}">
                     </div>
@@ -32,21 +35,19 @@ import TopicService from "./services/TopicService";
                             </div>
                         </div>
                     </div>
+                </a>
             </li>
-        </a>
-
     </ul>`,
 
 })
 export default class List{
     topics:Array<any>;
     constructor(http:Http,topicService:TopicService){
-        topicService.count();
-
         http.request('/api/v1/topics')
             .subscribe(e=>{
                 var json =  e.json()
                 this.topics = json['data']
             })
     }
+
 }

@@ -6,9 +6,11 @@ import {bootstrap,Component,CORE_DIRECTIVES,provide} from 'angular2/angular2'
 import {HTTP_PROVIDERS} from 'angular2/http'
 import {ROUTER_DIRECTIVES,ROUTER_PROVIDERS ,RouteConfig,LocationStrategy,HashLocationStrategy} from 'angular2/router';
 //import list from './list.ts'
-import List from   './list.ts'
+import List from   './list'
 import Detail from './detail'
-import TopicService from './services/TopicService.ts'
+import TopicService from './services/TopicService'
+
+declare var TweenMax: any;
 @Component({
     selector:'app',
     directives:[ROUTER_DIRECTIVES],
@@ -17,12 +19,13 @@ import TopicService from './services/TopicService.ts'
     `,
     providers:[TopicService]
 })
-@RouteConfig([
-    { path:'/', as:'List' ,component:List},
-    {path:'/Detail', as:'Detail', component:Detail}
-])
+//@RouteConfig([
+//    { path:'/', as:'List' ,component:List},
+//    {path:'/detail', as:'Detail', component:Detail}
+//])
 class App{
-    constructor(){
+    constructor(public topicService:TopicService){
+        window['topicService'] = topicService;
 
     }
 }

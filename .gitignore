@@ -32,3 +32,4 @@ node_modules
 .idea
 
 assets/dist/angular2
+assets/dist/angular-manifest.json

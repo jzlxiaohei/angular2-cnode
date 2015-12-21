@@ -1,9 +1,37 @@
 @import "reset.css";
 @import "atomic";
 @import "common";
+@import "markdown";
+
+#angular2-cnode-app{
+  display: block;
+}
+
+.container{
+  display: flex;
+  width: 1024px;
+  margin: 0 auto;
+  height: 80vh;
+  margin-top: 10vh;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 
 .topics{
-  background: #f0f0f0;
+  flex:1;
+  overflow-y: scroll;
+  border: 1px solid #c9c9c9;
 }
 
 .topic-item{
@@ -11,6 +39,9 @@
   padding: 10px;
   background: #fff;
   border-bottom: 1px solid #ccc;
+  &:last-child{
+    border-bottom: none;
+  }
   .avatar{
     width:60px;
     height: 60px;
@@ -23,7 +54,7 @@
   }
   .content{
     position: relative;
-    padding: 5px 0;
+    padding: 5px 0 15px;
     flex:1;
     .title{
       font-size: 16px;
@@ -55,4 +86,49 @@
   display: inline-block;
   margin-right: 4px;
   vertical-align: 1px;
+}
+
+.current-topic{
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  .content{
+    flex:1;
+    overflow: auto;
+    padding: 8px 16px;
+    border-top: 1px solid #c9c9c9;
+  }
+  .splitter{
+    background: #c9c9c9;
+    width: 100%;
+    //height: 10px;
+    flex:0 0 10px;
+  }
+  .comment{
+    word-break: break-all;
+    flex: 0 0 80px;
+    .my-comment{
+      height: 80px;
+      resize: none;
+      width: 100%;
+    }
+  }
+}
+
+.load-more-wrapper{
+  padding:8px 16px;
+  .btn-load-more{
+    width: 100%;
+    height: 30px;
+    background: #4cd964;
+    color:#fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    &:hover{
+      background:#390;
+    }
+  }
+
 }

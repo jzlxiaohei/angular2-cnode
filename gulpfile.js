@@ -14,7 +14,7 @@ gulp.task('dev-server',function(){
             colors:true
         }
     })
-    server.listen(9527,'localhost')
+    server.listen(9528,'localhost')
 })
 
 

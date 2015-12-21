@@ -7,44 +7,53 @@ module.exports =
 
         'angular2': [
             // group angular2 deps into the angular2.js file
-            'core-js',
-            'rxjs',
-            'zone.js',
+            'es6-promise',
+            'es6-shim',
             'reflect-metadata',
-            'angular2/angular2',
+            'zone.js/dist/zone-microtask',
+            'zone.js/dist/long-stack-trace-zone',
+            //'zone.js',
+            'angular2/platform/browser',
+            'angular2/platform/common_dom',
             'angular2/core',
             'angular2/router',
-            'angular2/http'
+            'angular2/http',
+            'rxjs'
         ],
         app: [
             //'webpack/hot/only-dev-server',
-            'webpack-dev-server/client?http://0.0.0.0:9527',
+            'webpack-dev-server/client?http://0.0.0.0:9528',
             'webpack/hot/dev-server',
             //'webpack/hot/only-dev-server',
-            './assets/src/app.entry.ts']
+            './assets/src/app.entry.js']
     },
     cache: true,
 
     verbose: true,
-    resolve: {
-        extensions: ['', '.ts', '.webpack.js', '.web.js', '.js']
-    },
+    //resolve: {
+    //    extensions: ['', '.ts', '.webpack.js', '.web.js', '.js']
+    //},
     output: {
         path: path.join(__dirname, './assets/dist'),
         filename: '[name].js',
         sourceMapFilename: '[name].js.map',
         chunkFilename: '[name].js',
-        publicPath: 'http://localhost:9527/'
+        publicPath: 'http://localhost:9528/'
     },
 
     module: {
         loaders: [
             // Support for .ts files.
             {
-                test: /\.ts$/,
-                loader: 'awesome-typescript-loader',
-                exclude: [/\.spec\.ts$/, /\.e2e\.ts$/, /node_modules/]
+                test: /[\.jsx|\.js ]$/,
+                exclude: /node_modules/,
+                loaders: ["babel-loader?stage=0&optional[]=runtime"]
             },
+            //{
+            //    test: /\.ts$/,
+            //    loader: 'awesome-typescript-loader',
+            //    exclude: [/\.spec\.ts$/, /\.e2e\.ts$/, /node_modules/]
+            //},
             {
                 test: /\.less$/,
                 loader: "style-loader!css-loader!less-loader"

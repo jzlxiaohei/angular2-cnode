@@ -2,16 +2,31 @@ var webpack = require("webpack");
 var path = require('path')
 module.exports = {
     entry: {
-        'angular2': [
-            // group angular2 deps into the angular2.js file
-            'core-js',
-            'rxjs',
-            'zone.js',
-            'reflect-metadata',
-            'angular2/angular2',
-            'angular2/core',
-            'angular2/router',
-            'angular2/http'
+        //'angular2': [
+        //    // group angular2 deps into the angular2.js file
+        //    'core-js',
+        //    'rxjs',
+        //    'zone.js',
+        //    'reflect-metadata',
+        //    'angular2/angular2',
+        //    'angular2/core',
+        //    'angular2/router',
+        //    'angular2/http'
+        //]
+        'angular2':[
+        'es6-promise',
+        'es6-shim',
+        'reflect-metadata',
+        'zone.js/dist/zone-microtask',
+        'zone.js/dist/long-stack-trace-zone',
+            //'zone.js',
+        'angular2/platform/browser',
+        'angular2/platform/common_dom',
+        'angular2/core',
+        'angular2/router',
+        'angular2/http',
+
+         'rxjs'
         ]
     },
     output: {

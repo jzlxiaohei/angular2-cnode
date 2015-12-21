@@ -7,7 +7,7 @@ import {Router, RouterLink } from 'angular2/router';
 import TopicService from "./services/TopicService";
 
 @Component({
-    selector:'list',
+    selector:'detail',
     directives:[],
     template: `
         <div>
@@ -18,6 +18,5 @@ import TopicService from "./services/TopicService";
 })
 export default class List{
     constructor(topicService:TopicService){
-        console.log(topicService.count())
     }
 }

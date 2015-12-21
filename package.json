@@ -14,13 +14,24 @@
   "author": "zilong",
   "license": "MIT",
   "dependencies": {
-    "angular2": "^2.0.0-alpha.52",
+    "angular2": "^2.0.0-beta.0",
+    "babel-plugin-angular2-annotations": "^2.0.1",
+    "babylon": "^6.3.18",
     "core-js": "^1.2.6",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
     "h2o2": "^4.0.2",
     "hapi": "^11.1.2",
-    "inert": "^3.2.0"
+    "inert": "^3.2.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "0.5.10"
   },
   "devDependencies": {
+    "babel": "5.8.21",
+    "babel-core": "^5.8.22",
+    "babel-loader": "^5.3.2",
+    "babel-runtime": "^5.8.20",
     "awesome-typescript-loader": "^0.15.9",
     "css-loader": "^0.23.0",
     "file-loader": "^0.8.5",
